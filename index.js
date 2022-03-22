@@ -59,6 +59,27 @@ app.post("/create", (req, res) => {
 });
 
 
+app.put('/update', (req,res) => {
+  const id = req.body.id;
+  const email = req.body.email;
+  const firstName = req.body.firstName
+  const lastName = req.body.lastName
+
+
+  db.query("UPDATE SET contact_db firstName = ? WHERE id = ?",
+  [firstName,id],
+  (err, result) => {
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.send(result);
+    }
+  } )
+
+})
+
+
 app.listen(3001, () => {
     console.log("Listening on port 3001. Hello World");
 })
