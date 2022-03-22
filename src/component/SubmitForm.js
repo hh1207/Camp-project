@@ -7,6 +7,8 @@ export default function SubmitForm() {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [grade, setGrade] = useState("");
+    const [paid, setPaid] = useState("");
     const [email, setEmail] = useState("");
     let history = useHistory();
 
@@ -15,7 +17,9 @@ export default function SubmitForm() {
         Axios.post('http://localhost:3001/create', {
           firstName: firstName,
           lastName: lastName,
+          grade: grade,
           email: email,
+          paid: paid,
         }).then(() => {
           console.log("success");
         });
@@ -25,9 +29,6 @@ export default function SubmitForm() {
     console.log("You clicked me");
     history.push("/");
 }
-
-
-
 
   return (
     <div className= "App">
@@ -46,6 +47,13 @@ export default function SubmitForm() {
               setLastName(event.target.value);
               }}/>
 
+          <label>Grade</label>
+        <input 
+        type="text"
+          onChange={(event) =>{
+              setGrade(event.target.value);
+              }}/>
+
 
          <label>Email Address</label>
         <input 
@@ -53,6 +61,16 @@ export default function SubmitForm() {
             onChange={(event) =>{
               setEmail(event.target.value);
               }}/>
+
+          <label>Payment Submitted?</label>
+          <input 
+          type="text"
+            onChange={(event) =>{
+              setPaid(event.target.value);
+              }}/>
+
+
+        <label for= "yes"> Yes </label>
 
 
         <button onClick={addContact}> Submit Form </button>
