@@ -1,0 +1,22 @@
+.card {
+  background-color: rgb(243, 243, 243);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.row {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card img {
+  width: 200px;
+  height: auto;
+}
+
+.container {
+  justify-content: center;
+  text-align: center;
+}
