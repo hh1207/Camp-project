@@ -42,12 +42,14 @@ app.post("/create", (req, res) => {
     console.log(req.body);
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
+  const grade = req.body.grade;
   const email = req.body.email;
+  const paid = req.body.paid;
   
 
   db.query(
-    "INSERT INTO contact_db (firstName, lastName, email) VALUES (?,?,?)",
-    [firstName,lastName,email],
+    "INSERT INTO contact_db (firstName, lastName, grade, email, paid) VALUES (?,?,?,?,?)",
+    [firstName,lastName,grade,email,paid],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -61,13 +63,11 @@ app.post("/create", (req, res) => {
 
 app.put('/update', (req,res) => {
   const id = req.body.id;
-  const email = req.body.email;
-  const firstName = req.body.firstName
-  const lastName = req.body.lastName
+const paid = req.body.paid;
 
 
-  db.query("UPDATE SET contact_db firstName = ? WHERE id = ?",
-  [firstName,id],
+  db.query("UPDATE SET contact_db paid = ? WHERE id = ?",
+  [paid,id],
   (err, result) => {
     if(err){
       console.log(err);
