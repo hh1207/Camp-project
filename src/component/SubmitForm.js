@@ -21,6 +21,10 @@ export default function SubmitForm() {
         });
     };
 
+      function backButton() {
+    console.log("You clicked me");
+    history.push("/");
+}
 
 
 
@@ -52,7 +56,9 @@ export default function SubmitForm() {
 
 
         <button onClick={addContact}> Submit Form </button>
-      </div>
+        <button variant="light blue" onClick={backButton}>Home Page</button>
+      
+     </div>
     </div>
   )
 }

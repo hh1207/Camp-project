@@ -25,6 +25,7 @@ export default function Participants() {
 <div className="contacts">
     <button onClick={getContacts}> Show Contacts</button>
      <button variant="light blue" onClick={backButton}>Home Page</button>
+     <button>Update</button>
 
     {contactList.map((val, key)=>{
         return (
@@ -40,7 +41,7 @@ export default function Participants() {
               <td> {val.lastName} </td>
               <td> {val.email} </td>
             </tr>
-          </table>
+          </table>  
 
             </div>
     )})}
