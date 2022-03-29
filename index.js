@@ -63,10 +63,9 @@ app.post("/create", (req, res) => {
 
 app.put('/update', (req,res) => {
   const id = req.body.id;
-const paid = req.body.paid;
-
-
-  db.query("UPDATE SET contact_db paid = ? WHERE id = ?",
+  const paid = req.body.paid;
+  
+  db.query("UPDATE contact_db SET paid = ? WHERE id = ?",
   [paid,id],
   (err, result) => {
     if(err){
@@ -77,6 +76,23 @@ const paid = req.body.paid;
     }
   } )
 
+})
+
+
+app.delete('/delete/:id', (req,res) => {
+  const id = req.params.id
+
+  db.query("DELETE FROM contact_db WHERE id = ?",
+   id,
+   (err,result) => {
+     if (err) {
+       console.log(err);
+     }
+     else {
+       res.send(result);
+     }
+   }
+   )
 })
 
 
