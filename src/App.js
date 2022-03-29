@@ -2,7 +2,7 @@ import './App.css';
 import Homepage from './pages/Homepage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import FormPage from './pages/FormPage';
-import Participants from './pages/Participants';
+import ParticipantList from './pages/ParticipantsList';
 
 
 function App() {
@@ -18,8 +18,10 @@ function App() {
     </Route>
 
     <Route exact path ={["/participants"]}>
-    <Participants></Participants>
+   <ParticipantList></ParticipantList>
     </Route>
+
+   
 
   </BrowserRouter>
   

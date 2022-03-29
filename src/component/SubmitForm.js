@@ -12,6 +12,12 @@ export default function SubmitForm() {
     const [email, setEmail] = useState("");
     let history = useHistory();
 
+function registrationButton() {
+    console.log("You clicked me");
+    history.push("/SubmitForm");
+}
+
+
 
     const addContact = () => {
         Axios.post('http://localhost:3001/create', {
@@ -21,7 +27,9 @@ export default function SubmitForm() {
           email: email,
           paid: paid,
         }).then(() => {
-          console.log("success");
+          alert("Participant added!");
+          window.location = "http://localhost:3000/SubmitForm";
+
         });
     };
 
@@ -68,9 +76,6 @@ export default function SubmitForm() {
             onChange={(event) =>{
               setPaid(event.target.value);
               }}/>
-
-
-        <label for= "yes"> Yes </label>
 
 
         <button onClick={addContact}> Submit Form </button>
