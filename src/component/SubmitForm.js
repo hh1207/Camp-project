@@ -39,25 +39,27 @@ function registrationButton() {
 }
 
   return (
-    <div className= "App">
+    <div>
+
+<div className= "App">
       <div className="information">
         <label>First Name</label>
         <input 
-          type="text" 
+          type="text" placeholder='First Name'
             onChange={(event) =>{
               setFirstName(event.target.value);
               }}/>
 
          <label>Last Name</label>
         <input 
-        type="text"
+        type="text" placeholder='Last Name'
           onChange={(event) =>{
               setLastName(event.target.value);
               }}/>
 
           <label>Grade</label>
         <input 
-        type="text"
+        type="text" placeholder='Grade'
           onChange={(event) =>{
               setGrade(event.target.value);
               }}/>
@@ -65,14 +67,14 @@ function registrationButton() {
 
          <label>Email Address</label>
         <input 
-          type="text"
+          type="text" placeholder='Email'
             onChange={(event) =>{
               setEmail(event.target.value);
               }}/>
 
           <label>Payment Submitted?</label>
           <input 
-          type="text"
+          type="text" placeholder='Payment Submitted'
             onChange={(event) =>{
               setPaid(event.target.value);
               }}/>
@@ -82,6 +84,9 @@ function registrationButton() {
         <button variant="light blue" onClick={backButton}>Home Page</button>
       
      </div>
+
+    </div>
+    
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import '../css/homepage.css'
 import { useHistory } from 'react-router-dom';
 
@@ -8,18 +7,10 @@ export default function CampInformation() {
 
   let history = useHistory();
 
-  function registrationButton() {
-    console.log("You clicked me");
-    history.push("/SubmitForm");
-}
+let loginButton = () => history.push("/admin");
 
-function listButton() {
-  console.log("You Clicked me");
-  history.push("/participants");
-}
 
   return (
-
     <Card class= "camp-information" style={{ width: '15rem' }}>
   <Card.Img variant="Center" src="https://images.unsplash.com/photo-1497906539264-eb74442e37a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" />
   <Card.Body>
@@ -32,11 +23,9 @@ function listButton() {
 REGISTRATION DUE DATE: Sunday, April 24, 2022
  
     </Card.Text>
-    <Button variant="light blue" onClick={registrationButton}>Register here</Button>
-    <Button variant="light blue" onClick={listButton}>Participants List</Button>
+   
+    <button onClick={(loginButton)}> Administrator Login</button>
   </Card.Body>
-
-
 </Card>
   )
 }

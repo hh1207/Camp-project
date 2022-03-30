@@ -3,6 +3,7 @@ import Homepage from './pages/Homepage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import FormPage from './pages/FormPage';
 import ParticipantList from './pages/ParticipantsList';
+import AdminPage from './pages/AdminPage';
 
 
 function App() {
@@ -21,7 +22,11 @@ function App() {
    <ParticipantList></ParticipantList>
     </Route>
 
-   
+
+     <Route exact path ={["/admin"]}>
+   <AdminPage></AdminPage>
+    </Route>
+
 
   </BrowserRouter>
   

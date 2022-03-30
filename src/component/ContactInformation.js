@@ -3,7 +3,8 @@ import React from 'react'
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
-import '../css/participants.css'
+ 
+
 
 
 export default function ContactInformation() {
@@ -51,6 +52,7 @@ const deleteContact = (id) => {
   }
 
   return (
+    <div>
 <div className="contacts">
     <button onClick={getContacts}> Show Contacts</button>
      <button variant="light blue" onClick={backButton}>Home Page</button>
@@ -59,7 +61,7 @@ const deleteContact = (id) => {
     {contactList.map((val, key)=>{
         return (
     <Table striped bordered hover variant= "dark">
-<table class="table table-dark">
+<table class="table-box">
   <thead>
     <tr>
       <th scope="col">First Name</th>
@@ -93,6 +95,8 @@ const deleteContact = (id) => {
    </Table>
     )})}
 </div>
+    </div>
+
     
   )
 }

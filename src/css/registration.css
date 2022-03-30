@@ -1,0 +1,9 @@
+img {
+  max-width: 100%;
+}
+
+body {
+  background-image: url("../images/camping.jpg");
+  background-size: flex;
+  background-blend-mode: darken;
+}
